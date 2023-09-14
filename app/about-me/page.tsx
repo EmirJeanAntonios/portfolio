@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 
-export default function Home() {
+export default function About() {
   return (
     <section className="flex items-center h-full py-16">
       <div className="basis-2/3">
@@ -18,6 +17,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
+          className="lg:max-w-[90%] text-justify"
         >
           <p className="text-xl leading-8 mb-4">
             Merhaba, ben Emir Jean Antonios. Beykent üniversitesi Bilgisayar
@@ -56,7 +56,7 @@ export default function Home() {
           </p>
         </motion.div>
       </div>
-      <div className="flex-1 flex justify-end pl-4">
+      <div className="flex-1 flex justify-end">
         <motion.div className="relative  rounded-xl w-full lg:h-[500px]">
           <Image
             src={"/profile.jpeg"}

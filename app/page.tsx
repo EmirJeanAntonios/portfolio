@@ -18,6 +18,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
+          className="text-justify"
         >
           <p className="text-xl leading-8">
             Merhaba, Ben Emir Jean Antonios. Bilgisayar mühendisi olarak,
