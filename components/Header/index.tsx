@@ -1,9 +1,30 @@
+"use client";
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { usePathname } from "next/navigation";
+import { FunctionComponent, useMemo } from "react";
 
 interface HeaderProps {}
 
+interface IRoute {
+  name: string;
+  href: string;
+}
+
+//TODO: get this from backend
+const routes: Array<IRoute> = [
+  {
+    name: "About Me",
+    href: "/about-me",
+  },
+  {
+    name: "Experiences",
+    href: "/experiences",
+  },
+];
+
 const Header: FunctionComponent<HeaderProps> = () => {
+  const pathname = usePathname();
+
   return (
     <header className="container mx-auto flex justify-between items-center">
       <Link href={"/"}>
@@ -11,17 +32,11 @@ const Header: FunctionComponent<HeaderProps> = () => {
       </Link>
       <div>
         <ul className="flex gap-8">
-          <li>
-            <Link href={"about-me"}>About Me</Link>
-          </li>
-          <li>
-            <Link href={"experiences"}>Experiences</Link>
-          </li>
-          <li>
-            Skills
-          </li>
-          <li>Projects</li>
-          <li>CV</li>
+          {routes.map((route) => (
+            <li key={route.name}>
+              <Link  href={route.href} className={pathname === route.href ? "font-bold text-sky-500 transition" : ""}>{route.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </header>

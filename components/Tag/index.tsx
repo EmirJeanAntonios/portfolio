@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 
 interface TagProps {
-  children?: React.ReactNode | string;
+  children?: React.ReactNode;
 }
 
 const Tag: FunctionComponent<TagProps> = ({ children }) => {
