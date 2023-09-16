@@ -10,11 +10,11 @@ import Tag from "@/components/Tag";
 export default function Experience() {
   return (
     <section className="h-full pt-16">
-      <div className="">
+      <div className="text-center">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-7xl font-bold pb-8"
+          className="text-3xl lg:text-7xl  font-bold pb-8"
         >
           Tecrübelerim
         </motion.h1>
@@ -31,8 +31,9 @@ export default function Experience() {
           >
             <h3 className="text-2xl font-bold pb-3">Frontend Developer</h3>
             <h4 className="text-md">HelioCampus, United States - Remote</h4>
-            <p className="!text-sm">
-              <Tag>Reactjs</Tag> <Tag>Component Library Development</Tag>  <Tag>MUI</Tag>
+            <p className="!text-sm lg:block flex flex-wrap gap-2">
+              <Tag>Reactjs</Tag> <Tag>Component Library Development</Tag>
+              <Tag>MUI</Tag>
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement

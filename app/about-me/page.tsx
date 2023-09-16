@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <section className="flex items-center h-full py-16">
-      <div className="basis-2/3">
+      <div className="xl:basis-2/3 p-4 xl:p-0 text-center">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-7xl font-bold pb-8"
+          className="text-3xl lg:text-5xl xl:text-7xl font-bold pb-8"
         >
           Hakkımda
         </motion.h1>
@@ -17,9 +17,9 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="lg:max-w-[90%] text-justify"
+          className="xl:max-w-[90%] text-justify"
         >
-          <p className="text-xl leading-8 mb-4">
+          <p className="text-lg xl:text-xl leading-8 mb-4">
             Merhaba, ben Emir Jean Antonios. Beykent üniversitesi Bilgisayar
             Mühendisliği bölümünden mezunum. Bilgisayar mühendisliği serüvenime
             Haydarpaşa Teknik ve Mesleki Anadolu Lisesinde Bilişim bölümü
@@ -29,7 +29,7 @@ export default function About() {
             aldığım teknik dersler ile hem bir mühendis gibi düşünmeyi öğrendim
             hem de yazılım bilgimi algoritmik düşünerek geliştirdim.
           </p>
-          <p className="text-xl leading-8 mb-4">
+          <p className="text-lg xl:text-xl leading-8 mb-4">
             Kanada'da 3 hafta kaldım. Kaldığım süre boyunca ingilizce eğitimi
             aldım ve Kanada'yı gezme fırsatı yakaladım. Daha sonra Amerika'ya
             geçtim ve Philadelphia, Washington ve New york'u gezdim. Lise 4 te
@@ -37,7 +37,7 @@ export default function About() {
             yarışmasında çevirmen olarak görev aldım. Üniversite yıllarımda
             erasmus yaptım ve Çekya'da 6 ay kaldım.
           </p>
-          <p className="text-xl leading-8 mb-4">
+          <p className="text-lg xl:text-xl leading-8 mb-4">
             Şu an Amerika menşeli bir firmada remote Frontend Developer olarak
             çalışıyorum. Bu deneyim, uluslararası bir perspektifle yazılım
             geliştirme fırsatı sunuyor ve uzaktan çalışma becerilerimi
@@ -49,7 +49,7 @@ export default function About() {
             tutuyoruz. Bu deneyim, bilgisayar mühendisliği kariyerimi daha da
             ileriye taşıma konusundaki tutkumu ve kararlılığımı pekiştiriyor.
           </p>
-          <p className="text-xl leading-8">
+          <p className="text-lg xl:text-xl leading-8">
             Her gün yeni bir gelişme yaşadığımız bilgisayar teknolojisini takip
             edip kendimi geliştiriyor ve çok sevdiğim mesleğimi en iyi şekilde
             yapmaya çalışıyorum.
@@ -57,7 +57,7 @@ export default function About() {
         </motion.div>
       </div>
       <div className="flex-1 flex justify-end">
-        <motion.div className="relative  rounded-xl w-full lg:h-[500px]">
+        <motion.div className="relative  rounded-xl w-full xl:h-[500px]">
           <Image
             src={"/profile.jpeg"}
             layout="fill"
