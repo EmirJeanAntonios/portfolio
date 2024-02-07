@@ -1,9 +1,19 @@
 {
-    "Index": {
-      "title": "Hello world!"
-    },
-    "Header": {
-        "about":"About Me",
-        "experience":"Experiences"
-    }
+  "Index": {
+    "content": "Hello, I'm Emir Jean Antonios. As a computer engineer, my passion and curiosity for the world of software constantly lead me to new discoveries and learning opportunities. As a passionate explorer pushing the boundaries of technology, I'm here to share my experiences and skills."
+  },
+  "About": {
+    "title": "About Me",
+    "content1": "Hello, I'm Emir Jean Antonios. I graduated from the Computer Engineering department of Beykent University. I began my journey in computer engineering by studying in the Informatics department at Haydarpaşa Technical and Vocational Anatolian High School. During my high school years, I took courses in PHP, C#, Javascript, HTML, CSS, and SQL, and started university as an intermediate level web developer. At Beykent University, I learned to think like an engineer and developed my software skills by thinking algorithmically through the technical courses I took.",
+    "content2": "I stayed in Canada for 3 weeks. During my stay, I took English lessons and had the opportunity to travel around Canada. Later, I traveled to the United States and visited Philadelphia, Washington, and New York. In my senior year of high school, I served as a translator at a robotics competition in San Francisco for a week with my school's robotics club. During my university years, I did an Erasmus program and stayed in the Czech Republic for 6 months.",
+    "content3": "I am currently working as a remote Frontend Developer at an American-based company. This experience provides me with an opportunity to develop software from an international perspective and enhances my remote working skills. During this process, I am learning to collaborate more effectively on projects with team members from different cultures and backgrounds. Additionally, by staying updated on the latest trends in modern web technologies and application development, we ensure that our projects are always up-to-date with the latest technologies. This experience reinforces my passion and determination to advance my career in computer engineering.",
+    "content4": "I strive to keep myself updated and improve in my beloved profession of computer technology, which experiences new developments every day."
+  },
+  "Header": {
+    "about": "About Me",
+    "experience": "Experiences"
+  },
+  "Experiences": {
+    "title": "Experiences"
   }
+}

@@ -1,8 +1,19 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+type translations = {
+  title: string;
+  content1: string;
+  content2: string;
+  content3: string;
+  content4: string;
+};
 
-export default function About() {
+interface IAboutProps {
+  translations: translations;
+}
+
+export default function About({ translations }: IAboutProps) {
   return (
     <section className="flex items-center h-full py-16">
       <div className="xl:basis-2/3 p-4 xl:p-0 text-center">
@@ -11,7 +22,7 @@ export default function About() {
           animate={{ opacity: 1 }}
           className="text-3xl lg:text-5xl xl:text-7xl font-bold pb-8"
         >
-          Hakkımda
+          {translations.title}
         </motion.h1>
         <motion.div
           initial={{ opacity: 0 }}
@@ -20,39 +31,16 @@ export default function About() {
           className="xl:max-w-[90%] text-justify"
         >
           <p className="text-lg xl:text-xl leading-8 mb-4">
-            Merhaba, ben Emir Jean Antonios. Beykent üniversitesi Bilgisayar
-            Mühendisliği bölümünden mezunum. Bilgisayar mühendisliği serüvenime
-            Haydarpaşa Teknik ve Mesleki Anadolu Lisesinde Bilişim bölümü
-            okuyarak başladım. Lise yıllarımda PHP, C#, Javascript, HTML, CSS,
-            SQL dillerinin derslerini aldım ve orta seviye bir web developer
-            olarak Beykent üniversitesine başladım. Beykent Üniversitesinde
-            aldığım teknik dersler ile hem bir mühendis gibi düşünmeyi öğrendim
-            hem de yazılım bilgimi algoritmik düşünerek geliştirdim.
+            {translations.content1}
           </p>
           <p className="text-lg xl:text-xl leading-8 mb-4">
-            Kanada'da 3 hafta kaldım. Kaldığım süre boyunca ingilizce eğitimi
-            aldım ve Kanada'yı gezme fırsatı yakaladım. Daha sonra Amerika'ya
-            geçtim ve Philadelphia, Washington ve New york'u gezdim. Lise 4 te
-            okulumun robot kulübü ile San francisco da 1 hafta boyunca robot
-            yarışmasında çevirmen olarak görev aldım. Üniversite yıllarımda
-            erasmus yaptım ve Çekya'da 6 ay kaldım.
+            {translations.content2}
           </p>
           <p className="text-lg xl:text-xl leading-8 mb-4">
-            Şu an Amerika menşeli bir firmada remote Frontend Developer olarak
-            çalışıyorum. Bu deneyim, uluslararası bir perspektifle yazılım
-            geliştirme fırsatı sunuyor ve uzaktan çalışma becerilerimi
-            geliştirmeme yardımcı oluyor. Bu süreçte, farklı kültürlerden ve
-            uzmanlıklardan gelen ekip üyeleriyle işbirliği yaparak projelerde
-            daha etkili bir şekilde çalışmayı öğreniyorum. Ayrıca, modern web
-            teknolojileri ve uygulama geliştirme alanındaki son trendleri takip
-            ederek, projelerimizi her zaman en son teknolojilerle güncel
-            tutuyoruz. Bu deneyim, bilgisayar mühendisliği kariyerimi daha da
-            ileriye taşıma konusundaki tutkumu ve kararlılığımı pekiştiriyor.
+            {translations.content3}
           </p>
           <p className="text-lg xl:text-xl leading-8">
-            Her gün yeni bir gelişme yaşadığımız bilgisayar teknolojisini takip
-            edip kendimi geliştiriyor ve çok sevdiğim mesleğimi en iyi şekilde
-            yapmaya çalışıyorum.
+            {translations.content4}
           </p>
         </motion.div>
       </div>

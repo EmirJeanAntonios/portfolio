@@ -7,7 +7,12 @@ import "react-vertical-timeline-component/style.min.css";
 import { motion } from "framer-motion";
 import { FaBusinessTime as BusinessIcon } from "react-icons/fa";
 import Tag from "@/components/Tag";
-export default function Experience() {
+
+interface IExperienceProps {
+  title: string
+}
+
+export default function Experience({title}:IExperienceProps) {
   return (
     <section className="h-full pt-16">
       <div className="text-center">
@@ -16,7 +21,7 @@ export default function Experience() {
           animate={{ opacity: 1 }}
           className="text-3xl lg:text-7xl  font-bold pb-8"
         >
-          Tecrübelerim
+          {title}
         </motion.h1>
       </div>
       <div className="pt-8">

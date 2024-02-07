@@ -3,8 +3,11 @@ import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 
-export default function Home() {
-    
+interface IHomeProps {
+  content: string;
+}
+
+export default function Home({ content }: IHomeProps) {
   return (
     <section className="flex flwex-wrap items-center min-h-full">
       <div className="order-2 xl:order-1 xl:basis-1/2  p-4 xl:p-0">
@@ -13,7 +16,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           className="text-3xl text-center xl:text-left lg:text-5xl xl:text-7xl font-bold pb-8"
         >
-        Emir Jean Antonios
+          Emir Jean Antonios
         </motion.h1>
         <motion.div
           initial={{ opacity: 0 }}
@@ -21,13 +24,7 @@ export default function Home() {
           transition={{ delay: 0.4 }}
           className="text-justify"
         >
-          <p className="text-xl leading-8">
-            Merhaba, Ben Emir Jean Antonios. Bilgisayar mühendisi olarak,
-            yazılım dünyasına olan sevgim ve merakım beni sürekli olarak yeni
-            keşiflere ve öğrenmeye yönlendiriyor. Teknolojinin sınırlarını
-            zorlayan bir tutkulu gezgin olarak, deneyimlerimi ve becerilerimi
-            paylaşmak için buradayım.
-          </p>
+          <p className="text-xl leading-8">{content}</p>
           <div className="flex pt-4 gap-4">
             <SocialIcon
               style={{ height: 40, width: 40 }}
