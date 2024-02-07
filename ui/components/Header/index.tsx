@@ -2,10 +2,10 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import classNames from "classnames";
 import { Link, usePathname, useRouter } from "@/navigation";
 import { useLocale } from "next-intl";
-
+import NavigationLink from "../NavigationLink";
+import classNames from "classnames";
 type translation = {
   [key: string]: string | undefined;
 };
@@ -51,38 +51,32 @@ const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
           isMenuOpen && "pointer-events-auto opacity-100"
         )}
       >
-        <ul
-          className={classNames(
-            "flex gap-8 flex-col p-16 text-center",
-            "lg:flex-row lg:bg-transparent lg:text-left lg:p-0",
-            "child:text-white child:font-bold lg:child:font-normal lg:child:text-inherit"
-          )}
-        >
-          {routes.map((route) => (
-            <li key={route.name} className="">
-              <Link
-                href={route.href}
-                className={
-                  pathname === route.href
-                    ? "font-bold lg:text-sky-500 transition"
-                    : ""
-                }
-              >
-                {translations[route.name]}
-              </Link>
-            </li>
-          ))}
-          <li
-            className="cursor-pointer"
-            onClick={() => {
-              router.replace(pathname, {
-                locale: locale == "tr" ? "en" : "tr",
-              });
-            }}
+        <nav>
+          <ul
+            className={classNames(
+              "flex gap-8 flex-col p-16 text-center",
+              "lg:flex-row lg:bg-transparent lg:text-left lg:p-0",
+              "child:text-white child:font-bold lg:child:font-normal lg:child:text-inherit"
+            )}
           >
-            {locale == "tr" ? "EN" : "TR"}
-          </li>
-        </ul>
+            <li>
+              <NavigationLink href={"/about-me"}>{translations["about"]}</NavigationLink>
+            </li>
+            <li>
+              <NavigationLink href={"/experiences"}>{translations["experience"]}</NavigationLink>
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                router.replace(pathname, {
+                  locale: locale == "tr" ? "en" : "tr",
+                });
+              }}
+            >
+              {locale == "tr" ? "EN" : "TR"}
+            </li>
+          </ul>
+        </nav>
       </div>
       <div
         className="lg:hidden relative z-20 text-black text-3xl"
