@@ -25,7 +25,7 @@ export default function Experience({ title }: IExperienceProps) {
         </motion.h1>
       </div>
       <div className="pt-8">
-        <VerticalTimeline lineColor="#000">
+        <VerticalTimeline>
           <VerticalTimelineElement
             contentStyle={{ background: "#000", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  #000" }}

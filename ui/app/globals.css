@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 
+
+.vertical-timeline::before {
+    background: black !important;
+}

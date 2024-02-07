@@ -1,16 +1,16 @@
 "use client";
-import { usePathname } from "next/navigation";
 import { FunctionComponent, useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import classNames from "classnames";
-import { Link } from "@/navigation";
+import { Link, usePathname, useRouter } from "@/navigation";
+import { useLocale } from "next-intl";
 
 type translation = {
-  [key:string] : string | undefined
-}
+  [key: string]: string | undefined;
+};
 interface HeaderProps {
-  translations: translation 
+  translations: translation;
 }
 
 interface IRoute {
@@ -32,6 +32,8 @@ const routes: Array<IRoute> = [
 
 const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
   const pathname = usePathname();
+  const router = useRouter();
+  const locale = useLocale();
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   useEffect(() => {
     setMenuOpen(false);
@@ -70,6 +72,16 @@ const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
               </Link>
             </li>
           ))}
+          <li
+            className="cursor-pointer"
+            onClick={() => {
+              router.replace(pathname, {
+                locale: locale == "tr" ? "en" : "tr",
+              });
+            }}
+          >
+            {locale == "tr" ? "EN" : "TR"}
+          </li>
         </ul>
       </div>
       <div
