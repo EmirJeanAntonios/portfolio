@@ -1,11 +1,17 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent, useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import classNames from "classnames";
-interface HeaderProps {}
+import { Link } from "@/navigation";
+
+type translation = {
+  [key:string] : string | undefined
+}
+interface HeaderProps {
+  translations: translation 
+}
 
 interface IRoute {
   name: string;
@@ -15,22 +21,21 @@ interface IRoute {
 //TODO: get this from backend
 const routes: Array<IRoute> = [
   {
-    name: "About Me",
+    name: "about",
     href: "/about-me",
   },
   {
-    name: "Experiences",
+    name: "experience",
     href: "/experiences",
   },
 ];
 
-const Header: FunctionComponent<HeaderProps> = () => {
+const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
-
   useEffect(() => {
-    setMenuOpen(false)
-  },[pathname])
+    setMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header className="container p-4 xl:p-0 mx-auto flex justify-between items-center">
@@ -38,19 +43,17 @@ const Header: FunctionComponent<HeaderProps> = () => {
         <h2 className="text-xl font-bold">Emir Jean Antonios</h2>
       </Link>
       <div
-        className={
-          classNames(
-            "fixed top-0 bottom-0 left-0 opacity-0 z-10 pointer-events-none bg-sky-500 transition-opacity w-full lg:w-auto",
-            "lg:static lg:opacity-100 lg:bg-transparent lg:pointer-events-auto",
-            isMenuOpen && "pointer-events-auto opacity-100"
-          )
-        }
+        className={classNames(
+          "fixed top-0 bottom-0 left-0 opacity-0 z-10 pointer-events-none bg-sky-500 transition-opacity w-full lg:w-auto",
+          "lg:static lg:opacity-100 lg:bg-transparent lg:pointer-events-auto",
+          isMenuOpen && "pointer-events-auto opacity-100"
+        )}
       >
         <ul
           className={classNames(
             "flex gap-8 flex-col p-16 text-center",
             "lg:flex-row lg:bg-transparent lg:text-left lg:p-0",
-            "child:text-white child:font-bold lg:child:font-normal lg:child:text-inherit",
+            "child:text-white child:font-bold lg:child:font-normal lg:child:text-inherit"
           )}
         >
           {routes.map((route) => (
@@ -63,7 +66,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
                     : ""
                 }
               >
-                {route.name}
+                {translations[route.name]}
               </Link>
             </li>
           ))}

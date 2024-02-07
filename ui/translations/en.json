@@ -1,0 +1,9 @@
+{
+    "Index": {
+      "title": "Hello world!"
+    },
+    "Header": {
+        "about":"About Me",
+        "experience":"Experiences"
+    }
+  }
