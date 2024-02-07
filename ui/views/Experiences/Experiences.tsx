@@ -9,10 +9,10 @@ import { FaBusinessTime as BusinessIcon } from "react-icons/fa";
 import Tag from "@/components/Tag";
 
 interface IExperienceProps {
-  title: string
+  title: string;
 }
 
-export default function Experience({title}:IExperienceProps) {
+export default function Experience({ title }: IExperienceProps) {
   return (
     <section className="h-full pt-16">
       <div className="text-center">
@@ -36,8 +36,9 @@ export default function Experience({title}:IExperienceProps) {
           >
             <h3 className="text-2xl font-bold pb-3">Frontend Developer</h3>
             <h4 className="text-md">HelioCampus, United States - Remote</h4>
-            <p className="!text-sm lg:block flex flex-wrap gap-2">
-              <Tag>Reactjs</Tag> <Tag>Component Library Development</Tag>
+            <p className="!text-sm flex gap-2 flex-wrap">
+              <Tag>Reactjs</Tag>
+              <Tag>Component Library Development</Tag>
               <Tag>MUI</Tag>
             </p>
           </VerticalTimelineElement>
@@ -53,7 +54,10 @@ export default function Experience({title}:IExperienceProps) {
               Frontend Developer - Team Lead
             </h3>
             <h4 className="text-md">Liberyus, Ankara - Remote</h4>
-            <p className="!text-sm">Nextjs, PHP Laravel</p>
+            <p className="!text-sm flex gap-2 flex-wrap">
+              <Tag>Nextjs</Tag>
+              <Tag>PHP Laravel</Tag>
+            </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             contentStyle={{ background: "#000", color: "#fff" }}
@@ -67,9 +71,13 @@ export default function Experience({title}:IExperienceProps) {
               Co-Founder - Full Stack Developer
             </h3>
             <h4 className="text-md">Yavroom</h4>
-            <p className="!text-sm">
-              TypeScript - Redux.js - Amazon Web Services (AWS) - MySQL - Nginx
-              - React.js
+            <p className="!text-sm flex gap-2 flex-wrap">
+              <Tag>TypeScript</Tag>
+              <Tag>Redux.js</Tag>
+              <Tag>Amazon Web Services (AWS)</Tag>
+              <Tag>MySQL</Tag>
+              <Tag>Nginx</Tag>
+              <Tag>React.js</Tag>
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -84,9 +92,13 @@ export default function Experience({title}:IExperienceProps) {
               Co-Founder - Full Stack Developer
             </h3>
             <h4 className="text-md">Metaversy</h4>
-            <p className="!text-sm">
-              TypeScript - Redux.js - Amazon Web Services (AWS) - MySQL - Nginx
-              - React.js
+            <p className="!text-sm flex gap-2 flex-wrap">
+              <Tag>TypeScript</Tag>
+              <Tag>Redux.js</Tag>
+              <Tag>Amazon Web Services (AWS)</Tag>
+              <Tag>MySQL</Tag>
+              <Tag>Nginx</Tag>
+              <Tag>React.js</Tag>
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -99,10 +111,17 @@ export default function Experience({title}:IExperienceProps) {
           >
             <h3 className="text-2xl font-bold pb-3">Frontend Developer</h3>
             <h4 className="text-md">Arina Digital</h4>
-            <p className="!text-sm">
-              Amazon Web Services (AWS) - MySQL - Nginx - React.js - HTML -
-              Cascading Style Sheets (CSS) - JavaScript - WordPress - Laravel -
-              PHP
+            <p className="!text-sm flex gap-2 flex-wrap">
+              <Tag>Amazon Web Services (AWS)</Tag>
+              <Tag>MySQL</Tag>
+              <Tag>Nginx</Tag>
+              <Tag>React.js </Tag>
+              <Tag>HTML</Tag>
+              <Tag>Cascading Style Sheets (CSS) </Tag>
+              <Tag>JavaScript </Tag>
+              <Tag>WordPress </Tag>
+              <Tag>Laravel </Tag>
+              <Tag>PHP</Tag>
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -115,7 +134,11 @@ export default function Experience({title}:IExperienceProps) {
           >
             <h3 className="text-2xl font-bold pb-3">Internship Trainee</h3>
             <h4 className="text-md">KoçSistem</h4>
-            <p className="!text-sm">C#, MVC, asp.net</p>
+            <p className="!text-sm flex gap-2">
+              <Tag>C# </Tag>
+              <Tag>MVC </Tag>
+              <Tag>asp.net</Tag>
+            </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             contentStyle={{ background: "#000", color: "#fff" }}
@@ -127,7 +150,9 @@ export default function Experience({title}:IExperienceProps) {
           >
             <h3 className="text-2xl font-bold pb-3">Internship Trainee</h3>
             <h4 className="text-md">KoçSistem</h4>
-            <p className="!text-sm">Hardware</p>
+            <p className="!text-sm flex gap-2">
+              <Tag>Hardware</Tag>
+            </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>
