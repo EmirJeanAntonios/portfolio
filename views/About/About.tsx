@@ -15,8 +15,8 @@ interface IAboutProps {
 
 export default function About({ translations }: IAboutProps) {
   return (
-    <section className="flex items-center h-full py-16">
-      <div className="xl:basis-2/3 p-4 xl:p-0 text-center">
+    <section className="flex items-center h-full xl:py-16 overflow-y-auto">
+      <div className="xl:basis-2/3 p-4 xl:p-0 text-center  h-full">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
