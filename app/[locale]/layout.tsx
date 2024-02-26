@@ -23,7 +23,7 @@ export default function RootLayout({
   }
   return (
     <html lang={locale}>
-      <body className='grid grid-rows-layout min-h-screen'>
+      <body className='grid grid-rows-layout h-screen'>
         <Header translations={translations} />
         <main className='container mx-auto min-h-full'>
         {children}
