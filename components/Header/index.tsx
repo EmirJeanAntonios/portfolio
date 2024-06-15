@@ -3,15 +3,12 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { Link, usePathname, useRouter } from "@/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import NavigationLink from "../NavigationLink";
 import classNames from "classnames";
 type translation = {
   [key: string]: string | undefined;
 };
-interface HeaderProps {
-  translations: translation;
-}
 
 interface IRoute {
   name: string;
@@ -30,7 +27,7 @@ const routes: Array<IRoute> = [
   },
 ];
 
-const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
+const Header: FunctionComponent = () => {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
@@ -38,6 +35,8 @@ const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  const t = useTranslations();
 
   return (
     <header className="container p-4 xl:p-0 mx-auto flex justify-between items-center">
@@ -60,10 +59,14 @@ const Header: FunctionComponent<HeaderProps> = ({ translations }) => {
             )}
           >
             <li>
-              <NavigationLink href={"/about-me"}>{translations["about"]}</NavigationLink>
+              <NavigationLink href={"/about-me"}>
+                {t("Header.about")}
+              </NavigationLink>
             </li>
             <li>
-              <NavigationLink href={"/experiences"}>{translations["experience"]}</NavigationLink>
+              <NavigationLink href={"/experiences"}>
+                {t("Header.experience")}
+              </NavigationLink>
             </li>
             <li
               className="cursor-pointer"

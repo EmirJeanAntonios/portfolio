@@ -1,34 +1,30 @@
-import Header from '@/components/Header'
-import "../globals.css"
-import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl';
-
+import Header from "@/components/Header";
+import "../globals.css";
+import type { Metadata } from "next";
+import { NextIntlClientProvider, useTranslations } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: 'Emir Jean Antonios',
-  description: 'Emir Jean Antonios\' portfolio',
-}
+  title: "Emir Jean Antonios",
+  description: "Emir Jean Antonios' portfolio",
+};
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: {locale}
+  params: { locale },
 }: {
-  children: React.ReactNode,
-  params: {locale:string}
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
-  const t = useTranslations('Header');
-  const translations = {
-    about: t("about"),
-    experience:t("experience")
-  }
+  const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className='grid grid-rows-layout h-screen'>
-        <Header translations={translations} />
-        <main className='container mx-auto min-h-full'>
-        {children}
-        </main>
+      <body className="grid grid-rows-layout h-screen">
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <main className="container mx-auto min-h-full">{children}</main>
+        </NextIntlClientProvider>
       </body>
     </html>
-  )
+  );
 }
